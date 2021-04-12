@@ -14,7 +14,7 @@ from rotations import angle_normalize, rpy_jacobian_axis_angle, skew_symmetric, 
 # This is where you will load the data from the pickle files. For parts 1 and 2, you will use
 # p1_data.pkl. For Part 3, you will use pt3_data.pkl.
 ################################################################################################
-with open('data/pt3_data.pkl', 'rb') as file:
+with open('data/pt1_data.pkl', 'rb') as file:
     data = pickle.load(file)
 
 ################################################################################################
@@ -97,20 +97,20 @@ lidar.data = (C_li @ lidar.data.T).T + t_i_li
 # We set the values here.
 ################################################################################################
 #Part 1
-#var_imu_f = 0.10
-#var_imu_w = 0.1
-#var_gnss  = 0.01
-#var_lidar = 1.00
+var_imu_f = 0.10
+var_imu_w = 0.1
+var_gnss  = 0.01
+var_lidar = 1.00
 # Part 2
 #var_imu_f = 0.10
 #var_imu_w = 0.001
 #var_gnss  = 0.01
 #var_lidar = 100
 # Part 3
-var_imu_f = 0.01
-var_imu_w = 0.01
-var_gnss  = 10.
-var_lidar = 1.
+#var_imu_f = 0.01
+#var_imu_w = 0.01
+#var_gnss  = 10.
+#var_lidar = 1.
 
 ################################################################################################
 # We can also set up some constants that won't change for any iteration of our solver.
